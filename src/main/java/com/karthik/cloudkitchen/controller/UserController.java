@@ -103,6 +103,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.karthik.cloudkitchen.model.User;
+import com.karthik.cloudkitchen.model.orders;
+import com.karthik.cloudkitchen.service.OrderService;
 import com.karthik.cloudkitchen.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -179,6 +181,13 @@ public class UserController {
         userService.saveUser(user);
         model.addAttribute("successMessage", registrationSuccessMessage);
         return "redirect:/login";
+    }
+    
+    @PostMapping("/makeorder")
+    public String makeorder(@ModelAttribute orders order, Model model) {
+        OrderService.saveorder(order);
+        // model.addAttribute("successMessage", registrationSuccessMessage);
+        return "makeorder";
     }
 
     @GetMapping("/welcome")
