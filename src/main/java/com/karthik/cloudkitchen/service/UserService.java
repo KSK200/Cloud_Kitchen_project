@@ -1,5 +1,6 @@
 package com.karthik.cloudkitchen.service;
 
+import com.karthik.cloudkitchen.model.Orders;
 import com.karthik.cloudkitchen.model.User;
 
 // UserService.java
@@ -9,4 +10,5 @@ public interface UserService {
     String getRegistrationSuccessMessage();
     void saveUser(org.apache.catalina.User user);
     boolean isUserExists(String username);
+    void saveorder(Orders order);
 }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.karthik.cloudkitchen.model.Orders;
 import com.karthik.cloudkitchen.model.User;
 import com.karthik.cloudkitchen.repository.UserRepository;
 
@@ -24,8 +25,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User authenticateUser(String username, String password) {
-        return userRepository.findByUsernameAndPassword(username, password)
-                             .orElse(null);
+        return userRepository.findByUsernameAndPassword(username, password)                          .orElse(null);
     }
 
     @Override
@@ -43,5 +43,11 @@ public class UserServiceImpl implements UserService {
     public boolean isUserExists(String username) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'isUserExists'");
+    }
+
+    @Override
+    public void saveorder(Orders order) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'saveorder'");
     }
 }
